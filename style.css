@@ -16,22 +16,20 @@ header {
     justify-content: space-around;
     align-items: center;
 
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(0, 0, 0, 0);
     color: #fff;
 
     position: fixed;
     top: 0;
     left: 0;
+    z-index: 1000;
+
+    transition: all 0.5s;
 }
 
-.highlight {
-    border: 1px solid #fff;
-    width: fit-content;
-    height: fit-content;
-    padding: 10px;
-    border: 1px solid gray;
-    border-radius: 100px;
-    background-color: rgb(50,50,50);
+header.leave {
+    background-color: #fff;
+    color: #000
 }
 
 .HeaderContainer {
@@ -44,20 +42,63 @@ header {
     padding: 5px;
 }
 
+.HeaderContent {
+    display: inline-block;
+    position: relative;
+    transition: all 0.5s;
+}
+
 .HeaderContent::after {
-    transition: 1s border ease;
-    border-bottom: 0px solid cornflowerblue;
+    content: '';
+    width: 100%;
+    height: 2px;
+
+    position: absolute;
+    top: 100%;
+    left: 0;
+    transform: scaleX(0);
+    transform-origin: center;
+    background-color: cornflowerblue;
+    transition: all 0.5s;
 }
 
 .HeaderContent:hover::after {
-    border-bottom: 1px solid cornflowerblue;
-    transition: 1s border ease;
+    width: 100%;
+    transform: scaleX(1);
+}
+
+.HeaderContainer button {
+    background-color: #fff;
+    color: #000;
+    padding: 10px 20px;
+    border-radius: 10px;
+    transition: all 0.5s;
+}
+
+.HeaderContainer button.leave {
+    background-color: #000;
+    color: #fff;
+}
+
+.HeaderContainer button:hover {
+    background-color: cornflowerblue;
+    color: #fff;
 }
 
 .top {
     width: 100%;
     height: 100vh;
     overflow: hidden;
+}
+
+.highlight {
+    border: 1px solid #fff;
+    width: fit-content;
+    height: fit-content;
+    padding: 10px;
+    border: 1px solid gray;
+    border-radius: 100px;
+    background-color: rgb(50, 50, 50);
 }
 
 .top img {
@@ -67,16 +108,16 @@ header {
 
 .titleWrap {
     width: 100%;
-    height: calc(100% - 60px);
+    height: 100%;
 
     display: flex;
     justify-content: center;
     align-items: center;
 
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(0, 0, 45, 0.3);
 
     position: absolute;
-    top: 60px;
+    top: 0;
     left: 0;
 
     color: #fff;
@@ -87,7 +128,7 @@ header {
     height: 30%;
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 20px;
 }
 
 .TitleContent h1 {
@@ -105,15 +146,79 @@ header {
 
 .btnContainer {
     display: flex;
-    gap: 10px;
+    gap: 15px;
 }
 
-.btnContainer button:nth-child(1) {
+.titlebtn:nth-child(1) {
     background-color: cornflowerblue;
+    border: none;
+    transition: all 0.5s;
+}
+
+.titlebtn:nth-child(1):hover {
+    background-color: #fff;
+    color: #000;
     border: none;
 }
 
-.btnContainer button:nth-child(2) {
+.titlebtn:nth-child(2) {
     background-color: rgba(0, 0, 0, 0);
     border: 1px solid #fff;
+}
+
+.aboutus {
+    width: 100%;
+    height: 100vh;
+}
+
+.aboutContainer {
+    width: 80%;
+    height: 100%;
+    margin: auto;
+
+    display: flex;
+}
+
+.aboutContent {
+    width: 50%;
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 15px;
+    background-color: #fff;
+}
+
+.aboutContent h4 {
+    color: cornflowerblue;
+}
+
+.aboutContent h2 {
+    font-size: 40px;
+}
+
+.aboutContent h6 {
+    font-size: 14px;
+}
+
+.aboutExp {
+    display: flex;
+    gap: 30px;
+}
+
+.Exp {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.Exp a:nth-child(1) {
+    color: cornflowerblue;
+    font-size: 35px;
+    font-weight: 1000;
+}
+
+.Exp a:nth-child(2) {
+    color: #000;
+    font-size: 14px;
 }

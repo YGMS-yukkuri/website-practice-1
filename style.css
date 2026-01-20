@@ -27,13 +27,17 @@ header {
     transition: all 0.5s;
 }
 
+button {
+    cursor: pointer;
+}
+
 header.leave {
     background-color: #fff;
     color: #000
 }
 
 .icon {
-    cursor: default;
+    cursor: pointer;
 }
 
 .HeaderContainer {
@@ -62,7 +66,7 @@ header.leave {
     top: 100%;
     left: 0;
     transform: scaleX(0);
-    transform-origin: center;
+    transform-origin: left;
     background-color: cornflowerblue;
     transition: all 0.5s;
 }
@@ -75,7 +79,7 @@ header.leave {
 .HeaderContainer button {
     background-color: #fff;
     color: #000;
-    border: 1px solid #000;
+    border: none;
     padding: 10px 20px;
     border-radius: 10px;
     transition: all 0.5s;
@@ -226,6 +230,7 @@ header.leave {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: start;
 }
 
 .Exp a:nth-child(1) {

@@ -32,6 +32,10 @@ header.leave {
     color: #000
 }
 
+.icon {
+    cursor: default;
+}
+
 .HeaderContainer {
     display: flex;
     align-items: center;
@@ -46,6 +50,7 @@ header.leave {
     display: inline-block;
     position: relative;
     transition: all 0.5s;
+    cursor: pointer;
 }
 
 .HeaderContent::after {
@@ -70,6 +75,7 @@ header.leave {
 .HeaderContainer button {
     background-color: #fff;
     color: #000;
+    border: 1px solid #000;
     padding: 10px 20px;
     border-radius: 10px;
     transition: all 0.5s;

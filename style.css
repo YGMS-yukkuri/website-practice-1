@@ -250,6 +250,7 @@ header.leave {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 15px;
 }
 
 .Company h5 {
@@ -344,8 +345,80 @@ header.leave {
     overflow: hidden;
 }
 
+.news {
+    width: 80%;
+    height: 90vh;
+    margin: auto;
+}
 
+.newsContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 15px;
+    width: 100%;
+    height: 100%;
+}
 
+.newsContent {
+    display: flex;
+    width: 100%;
+    height: 60%;
+    justify-content: space-between;
+}
+
+.newsContainer h2 {
+    font-size: 40px;
+}
+
+.newsInnerContent {
+    width: 30%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    overflow: hidden;
+}
+
+.newsInnerContent img {
+    display: block;
+    width: 100%;
+    height: 60%;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.newsInnerContent h6 {
+    font-size: 14px;
+    color: cornflowerblue;
+}
+
+.newsInnerContent h5 {
+    font-size: 20px;
+}
+
+.newsInnerContent p {
+    font-size: 16px;
+    color: #555;
+}
+
+.innerTexts {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.contact {
+    width: 100%;
+    height: 90vh;
+    background-color: #fafafa;
+}
+
+.contactContainer {
+    width: 80%;
+    height: 100%;
+    margin: auto;
+}
 
 @keyframes scroll {
     0% {

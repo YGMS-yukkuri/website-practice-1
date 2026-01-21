@@ -402,6 +402,12 @@ header.leave {
     color: #555;
 }
 
+.newsInnerContent a {
+    text-decoration: none;
+    color: cornflowerblue;
+    font-weight: bold;
+}
+
 .innerTexts {
     display: flex;
     flex-direction: column;

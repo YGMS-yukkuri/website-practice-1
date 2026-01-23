@@ -228,22 +228,54 @@
                     <form>
                         <div class="formBlock">
                             <label for="name">お名前</label>
-                            <input type="text" id="name" placeholder="山田 太郎">
+                            <input type="text" id="name" placeholder="山田 太郎" >
                         </div>
                         <div class="formBlock">
-                            <label for="name">メールアドレス</label>
-                            <input type="text" id="name" placeholder="taro@company.com">
+                            <label for="mail">メールアドレス</label>
+                            <input type="email" id="mail" placeholder="taro@company.com" >
                         </div>
                         <div class="formBlock">
-                            <label for="name">メッセージ</label>
-                            <textarea type="text" id="name" placeholder="プロジェクトの詳細について..."></textarea>
+                            <label for="message">メッセージ</label>
+                            <textarea type="text" id="message" placeholder="プロジェクトの詳細について..." ></textarea>
                         </div>
-                        <button>送信する</button>
+                        <button id="formBtn" type="button">送信する</button>
                     </form>
                 </div>
             </div>
         </div>
     </main>
+
+    <footer>
+        <div class="footerContainer">
+            <div class="footerContent">
+                <h3>VANTAGE.</h3>
+                <p>デジタルイノベーションとクリエイティブの卓越性でブランドを支援します</p>
+            </div>
+            <div class="footerContent">
+                <h4>会社情報</h4>
+                <a href="">私たちについて</a>
+                <a href="">採用情報</a>
+                <a href="">プライバシーポリシー</a>
+            </div>
+            <div class="footerContent">
+                <h4>SNS</h4>
+                <div class="SNSicons">
+                    <div class="SNSicon">
+                        <img src="web/assets/icons/logo.svg" alt="twitter"/>
+                    </div>
+                    <div class="SNSicon">
+                        <img src="web/assets/icons/InBug-White.png" alt="">
+                    </div>
+                    <div class="SNSicon">
+                        <img src="web/assets/icons/Instagram_Glyph_White.svg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copylight">
+            <p>&copy;2024 VANTAGE Agency. All rights reserved</p>
+        </div>
+    </footer>
 
     <script src="script.js"></script>
 </body>

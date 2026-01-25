@@ -1,11 +1,16 @@
 const header = document.querySelector("header");
-const headerBtn = document.querySelector("header button");
+const headerBtn = document.querySelector("header a:nth-child(4)");
 const formName = document.querySelector("#name")
 const formEmail = document.querySelector("#mail")
 const formMessage = document.querySelector("#message")
 const formButton = document.querySelector("#formBtn")
 const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-
+const aboutus = document.querySelector(".aboutus")
+const expert = document.querySelector(".expert")
+const news = document.querySelector(".news")
+const ShowModalBtn = document.getElementById("SmodalBtn")
+const CloseModalBtn = document.getElementById("CmodalBtn")
+const Dialog = document.querySelector("dialog")
 
 const changeHeader = () => {
     if (window.scrollY !== 0) {
@@ -56,7 +61,34 @@ const formCheck = () => {
 
 const formSend = () => {
     console.log("OK");
-    
+    formButton.textContent = "送信完了！"
+    formButton.classList.add("send")
+    setTimeout(() => {
+        formButton.classList.remove("send")
+        formButton.textContent = ("送信する")
+        formName.value = "";
+        formEmail.value = "";
+        formMessage.value = "";
+    },[5000])
+}
+
+const movetoTop = () => {
+    window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: "smooth"
+    })
+}
+
+const movetoAbout = () => {
+    const CliY = aboutus.getBoundingClientRect().top
+    const ScY = window.scrollY
+    const Y = CliY + ScY
+    window.scrollTo({
+        top: Y,
+        left: 0,
+        behavior: "smooth"
+    })
 }
 
 window.addEventListener("scroll", () => {
@@ -72,7 +104,7 @@ formButton.addEventListener("click", () => {
     temp = formCheck()
     console.log(temp)
     let error = [];
-    let count
+    let count = 0
     temp.forEach((element,idx) => {
         if (element === "ng") {
             error.push(idx)
@@ -81,11 +113,17 @@ formButton.addEventListener("click", () => {
             count++
         }
     });
-
-    console.log(error);
-
     if (count === 3) {
         formSend()
     }
-    
+
+    console.log(error);
+})
+
+ShowModalBtn.addEventListener("click", () => {
+    Dialog.showModal()
+})
+
+CloseModalBtn.addEventListener("click", () => {
+    Dialog.close()
 })

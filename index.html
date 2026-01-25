@@ -11,19 +11,19 @@
 <body>
     <header>
         <div class="icon">
-            <h2>VANTAGE.</h2>
+            <h2 onclick="movetoTop()">VANTAGE.</h2>
         </div>
         <div class="HeaderContainer">
             <div class="HeaderContent">
-                <a>私たちについて</a>
+                <a href="#aboutus">私たちについて</a>
             </div>
             <div class="HeaderContent">
-                <a>サービス</a>
+                <a href="#expert">サービス</a>
             </div>
             <div class="HeaderContent">
-                <a>インサイト</a>
+                <a href="#news">インサイト</a>
             </div>
-            <button>お問い合わせ</button>
+            <a href="#contact">お問い合わせ</a>
         </div>
     </header>
 
@@ -40,14 +40,21 @@
                     <p>VANTAGEは、戦略、デザイン、テクノロジーを融合させ、ビジネスの成長
                         を牽引するデジタル体験を創造するグローバルエージェンシーです。</p>
                     <div class="btnContainer">
-                        <button type="button" class="btn titlebtn">詳しく見る</button>
-                        <button type="button" class="btn titlebtn">ミッション</button>
+                        <button type="button" class="btn titlebtn" onclick="movetoAbout()">詳しく見る</button>
+                        <button type="button" class="btn titlebtn" id="SmodalBtn">ミッション</button>
+                        <dialog closedby="any">
+                            <div>
+                                <h3>私たちのミッション</h3>
+                                <p>テクノロジーを人間らしく。アルゴリズムの世界において、共感こそが究極の競争優位性であると信じています。</p>
+                                <button class="btn" type="button" id="CmodalBtn">閉じる</button>
+                            </div>
+                        </dialog>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="aboutus">
+        <div class="aboutus" id="aboutus">
             <div class="aboutContainer">
                 <div class="aboutContent">
                     <h4>私たちについて</h4>
@@ -101,7 +108,7 @@
             </div>
         </div>
 
-        <div class="expert">
+        <div class="expert" id="expert">
             <div class="expertContainer">
                 <h2>専門分野</h2>
                 <p>デジタル領域全体において、測定可能な成果とユーザー中心のデザインに焦点を当てた包括的なソリューションを提供します。</p>
@@ -137,7 +144,7 @@
             </div>
         </div>
 
-        <div class="news">
+        <div class="news" id="news">
             <div class="newsContainer">
                 <h2>最新のインサイト</h2>
                 <p>チームがお届けするトレンド、視点、ニュース。</p>
@@ -197,7 +204,7 @@
                 </div>
             </div>
         </div>
-
+        <div id="contact"></div>
         <div class="contact">
             <div class="contactContainer">
                 <div class="contactContent_left">

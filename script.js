@@ -14,6 +14,7 @@ const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 const aboutus = document.querySelector(".aboutus")
 const expert = document.querySelector(".expert")
 const news = document.querySelector(".news")
+const contact = document.querySelector(".contact")
 const ShowModalBtn = document.getElementById("SmodalBtn")
 const CloseModalBtn = document.getElementById("CmodalBtn")
 const Dialog = document.querySelector("dialog")
@@ -39,6 +40,31 @@ const changeHeader = () => {
         })
         isLeave = false;
     };
+}
+
+const changeHumb = () => {
+    if (isShowHumb) {
+        headerContainer.classList.remove("showhumb")
+        isShowHumb = false;
+        if (!isLeave) {
+            header.classList.remove("leave");
+            headerBtn.classList.remove("leave");
+            headerHumb.forEach(elem => {
+                elem.classList.remove("leave")
+            })
+        }
+        changeHeader()
+    } else {
+        headerContainer.classList.add("showhumb")
+        isShowHumb = true;
+        if (!isLeave) {
+            header.classList.add("leave");
+            headerBtn.classList.add("leave");
+            headerHumb.forEach(elem => {
+                elem.classList.add("leave")
+            })
+        }
+    }
 }
 
 const classMatch = (elem, judge) => {
@@ -102,12 +128,50 @@ const movetoTop = () => {
 const movetoAbout = () => {
     const CliY = aboutus.getBoundingClientRect().top
     const ScY = window.scrollY
-    const Y = CliY + ScY
+    const Y = CliY + ScY - header.clientHeight
     window.scrollTo({
         top: Y,
         left: 0,
         behavior: "smooth"
     })
+    changeHumb();
+}
+
+const movetoNews = () => {
+    const CliY = news.getBoundingClientRect().top
+    const ScY = window.scrollY
+    const Y = CliY + ScY - header.clientHeight
+    window.scrollTo({
+        top: Y,
+        left: 0,
+        behavior: "smooth"
+    })
+    changeHumb();
+}
+
+
+const movetoExpert = () => {
+    const CliY = expert.getBoundingClientRect().top
+    const ScY = window.scrollY
+    const Y = CliY + ScY - header.clientHeight
+    window.scrollTo({
+        top: Y,
+        left: 0,
+        behavior: "smooth"
+    })
+    changeHumb();
+
+}
+const movetoContact = () => {
+    const CliY = contact.getBoundingClientRect().top
+    const ScY = window.scrollY
+    const Y = CliY + ScY - header.clientHeight
+    window.scrollTo({
+        top: Y,
+        left: 0,
+        behavior: "smooth"
+    })
+    changeHumb();
 }
 
 window.addEventListener("scroll", () => {
@@ -115,31 +179,9 @@ window.addEventListener("scroll", () => {
 });
 
 humb.addEventListener("click", () => {
-    if (isShowHumb) {
-        headerContainer.classList.remove("showhumb")
-        isShowHumb = false;
-        if (!isLeave) {
-            header.classList.remove("leave");
-            headerBtn.classList.remove("leave");
-            headerHumb.forEach(elem => {
-                elem.classList.remove("leave")
-            })
-        }
-        changeHeader()
-    } else {
-        headerContainer.classList.add("showhumb")
-        isShowHumb = true;
-        if (!isLeave) {
-            header.classList.add("leave");
-            headerBtn.classList.add("leave");
-            headerHumb.forEach(elem => {
-                elem.classList.add("leave")
-            })
-        }
-    }
+    changeHumb()
 })
 
-changeHeader();
 
 
 
@@ -159,7 +201,7 @@ formButton.addEventListener("click", () => {
     if (count === 3) {
         formSend()
     }
-
+    
     console.log(error);
 })
 
@@ -170,3 +212,8 @@ ShowModalBtn.addEventListener("click", () => {
 CloseModalBtn.addEventListener("click", () => {
     Dialog.close()
 })
+
+
+
+
+changeHeader();

@@ -1,10 +1,16 @@
 const header = document.querySelector("header");
 const headerBtn = document.querySelector("header a:nth-child(4)");
+const headerHumb = document.querySelectorAll(".humb div")
+const humb = document.querySelector(".humb")
+const headerContainer = document.querySelector(".HeaderContainer")
+
 const formName = document.querySelector("#name")
 const formEmail = document.querySelector("#mail")
 const formMessage = document.querySelector("#message")
 const formButton = document.querySelector("#formBtn")
+
 const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
 const aboutus = document.querySelector(".aboutus")
 const expert = document.querySelector(".expert")
 const news = document.querySelector(".news")
@@ -12,17 +18,26 @@ const ShowModalBtn = document.getElementById("SmodalBtn")
 const CloseModalBtn = document.getElementById("CmodalBtn")
 const Dialog = document.querySelector("dialog")
 
+let isShowHumb = false;
+
 const changeHeader = () => {
+
     if (window.scrollY !== 0) {
         header.classList.add("leave");
         headerBtn.classList.add("leave");
+        headerHumb.forEach(elem => {
+            elem.classList.add("leave")
+        })
     } else {
         header.classList.remove("leave");
         headerBtn.classList.remove("leave");
+        headerHumb.forEach(elem => {
+            elem.classList.remove("leave")
+        })
     };
 }
 
-const classMatch = (elem,judge) => {
+const classMatch = (elem, judge) => {
     if (judge === "ok") {
         elem.classList.remove("red")
     } else {
@@ -34,26 +49,26 @@ const formCheck = () => {
     let result = [];
     if (formName.value) {
         result.push("ok")
-        classMatch(formName,"ok")
+        classMatch(formName, "ok")
     } else {
         result.push("ng")
-        classMatch(formName,"ng")
+        classMatch(formName, "ng")
     }
 
     if (emailRegex.test(formEmail.value)) {
         result.push("ok")
-        classMatch(formEmail,"ok")
+        classMatch(formEmail, "ok")
     } else {
         result.push("ng")
-        classMatch(formEmail,"ng")
+        classMatch(formEmail, "ng")
     }
 
     if (formMessage.value) {
         result.push("ok")
-        classMatch(formMessage,"ok")
+        classMatch(formMessage, "ok")
     } else {
         result.push("ng")
-        classMatch(formMessage,"ng")
+        classMatch(formMessage, "ng")
     }
 
     return result
@@ -69,7 +84,7 @@ const formSend = () => {
         formName.value = "";
         formEmail.value = "";
         formMessage.value = "";
-    },[5000])
+    }, [5000])
 }
 
 const movetoTop = () => {
@@ -95,6 +110,13 @@ window.addEventListener("scroll", () => {
     changeHeader();
 });
 
+humb.addEventListener("click", () => {
+    if (isShowHumb) {
+        headerContainer.classList.remove("showhumb")
+    } else {
+        headerContainer.classList.add("showhumb")
+    }
+})
 
 changeHeader();
 
@@ -105,7 +127,7 @@ formButton.addEventListener("click", () => {
     console.log(temp)
     let error = [];
     let count = 0
-    temp.forEach((element,idx) => {
+    temp.forEach((element, idx) => {
         if (element === "ng") {
             error.push(idx)
         }

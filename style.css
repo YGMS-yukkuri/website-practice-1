@@ -769,6 +769,12 @@ footer {
         color: #000;
     }
 
+    dialog:open {
+        width: 100vw;
+        height: fit-content;
+        padding: 0;
+    }
+
     .Company {
         width: 100vw;
         overflow: hidden;

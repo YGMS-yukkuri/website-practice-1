@@ -19,8 +19,10 @@ const CloseModalBtn = document.getElementById("CmodalBtn")
 const Dialog = document.querySelector("dialog")
 
 let isShowHumb = false;
+let isLeave = false;
 
 const changeHeader = () => {
+    if (isShowHumb) return;
 
     if (window.scrollY !== 0) {
         header.classList.add("leave");
@@ -28,12 +30,14 @@ const changeHeader = () => {
         headerHumb.forEach(elem => {
             elem.classList.add("leave")
         })
+        isLeave = true;
     } else {
         header.classList.remove("leave");
         headerBtn.classList.remove("leave");
         headerHumb.forEach(elem => {
             elem.classList.remove("leave")
         })
+        isLeave = false;
     };
 }
 
@@ -113,8 +117,25 @@ window.addEventListener("scroll", () => {
 humb.addEventListener("click", () => {
     if (isShowHumb) {
         headerContainer.classList.remove("showhumb")
+        isShowHumb = false;
+        if (!isLeave) {
+            header.classList.remove("leave");
+            headerBtn.classList.remove("leave");
+            headerHumb.forEach(elem => {
+                elem.classList.remove("leave")
+            })
+        }
+        changeHeader()
     } else {
         headerContainer.classList.add("showhumb")
+        isShowHumb = true;
+        if (!isLeave) {
+            header.classList.add("leave");
+            headerBtn.classList.add("leave");
+            headerHumb.forEach(elem => {
+                elem.classList.add("leave")
+            })
+        }
     }
 })
 

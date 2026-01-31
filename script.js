@@ -125,7 +125,7 @@ const movetoTop = () => {
     })
 }
 
-const movetoAbout = () => {
+const movetoAbout = (n) => {
     const CliY = aboutus.getBoundingClientRect().top
     const ScY = window.scrollY
     const Y = CliY + ScY - header.clientHeight
@@ -134,6 +134,10 @@ const movetoAbout = () => {
         left: 0,
         behavior: "smooth"
     })
+
+    if (n === "pagebtn") {
+        return
+    }
     changeHumb();
 }
 
@@ -201,7 +205,7 @@ formButton.addEventListener("click", () => {
     if (count === 3) {
         formSend()
     }
-    
+
     console.log(error);
 })
 

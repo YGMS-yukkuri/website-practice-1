@@ -376,10 +376,11 @@ dialog button {
     border-radius: 10px;
     background-color: #fff;
     overflow: hidden;
+    transition: box-shadow 0.2s;
 }
 
 .expertInnerContent:hover {
-    box-shadow: #555 1px 1px 8px; 
+    box-shadow: #aaa 1px 1px 10px;
 }
 
 .imgContainer {
@@ -503,9 +504,6 @@ dialog button {
     flex-direction: row;
     justify-content: space-between;
     gap: 10%;
-
-    overflow-y: auto;
-    overflow-x: hidden;
 }
 
 .contactContent_left {
@@ -527,20 +525,19 @@ dialog button {
 .contactContent_right {
     width: 40%;
     height: auto;
-    min-height: fit-content;
     display: flex;
     justify-content: center;
     background-color: #fff;
     border-radius: 25px;
     box-shadow: #aaa 1px 1px 5px;
-    margin: 5px;
+    padding: 25px;
 }
 
 .contactContent_right form {
     display: flex;
     flex-direction: column;
     margin: auto;
-    width: 80%;
+    width: 100%;
     gap: 20px;
 }
 
@@ -684,6 +681,7 @@ footer {
     border-top: #456 1px solid;
     justify-content: center;
     align-items: center;
+    padding: 30px
 }
 
 .copylight p {
@@ -779,23 +777,27 @@ footer {
         padding: 0;
     }
 
+    .titleWrap {
+        padding: 0 15px;
+    }
+
     .Company {
         width: 100vw;
         overflow: hidden;
     }
 
     .TitleContent {
-        width: 80%;
+        width: 100%;
         justify-content: center;
     }
-
 
     .aboutus {
         height: auto;
     }
 
     .aboutContainer {
-        padding: 50px 0;
+        width: 100%;
+        padding: 50px 15px;
         flex-direction: column;
     }
 
@@ -805,7 +807,9 @@ footer {
     }
 
     .aboutExp {
+        width: 100%;
         justify-content: space-between;
+        gap: initial;
     }
 
     .Exp a:nth-child(1) {
@@ -819,6 +823,11 @@ footer {
     .expert {
         height: auto;
         padding: 50px 0;
+    }
+
+    .expertContainer {
+        width: 100%;
+        padding: 0 15px;
     }
 
     .expertContent {
@@ -842,7 +851,9 @@ footer {
     }
 
     .news {
+        width: 100%;
         height: auto;
+        padding: 50px 15px;
     }
 
     .newsContainer {
@@ -860,5 +871,49 @@ footer {
 
     .newsInnerContent {
         width: 100%;
+    }
+
+    .contact {
+        width: 100%;
+        height: auto;
+    }
+
+    .contactContainer {
+        padding: 50px 15px;
+        width: 100%;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .contactContent_left {
+        width: 100%;
+    }
+
+    .contactContent_right {
+        width: 100%;
+    }
+
+    footer {
+        padding: 50px 15px 0 15px;
+    }
+    
+    .footerContainer {
+        width: 80%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 50px;
+        margin: auto;
+    }
+
+    .footerContent {
+        width: 100%;
+        align-items: center;
+        text-align: center;
+    }
+
+    .SNSicons {
+        justify-content: center;
+        gap: 20px;
     }
 }

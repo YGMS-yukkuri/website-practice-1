@@ -3,6 +3,8 @@ const headerBtn = document.querySelector("header a:nth-child(4)");
 const headerHumb = document.querySelectorAll(".humb div")
 const humb = document.querySelector(".humb")
 const headerContainer = document.querySelector(".HeaderContainer")
+const ForTopBtn = document.querySelector(".forTop")
+
 
 const formName = document.querySelector("#name")
 const formEmail = document.querySelector("#mail")
@@ -28,17 +30,19 @@ const changeHeader = () => {
     if (window.scrollY !== 0) {
         header.classList.add("leave");
         headerBtn.classList.add("leave");
-        headerHumb.forEach(elem => {
+        headerHumb.forEach((elem, idx) => {
             elem.classList.add("leave")
         })
         isLeave = true;
+        ForTopBtn.classList.remove("nottop")
     } else {
         header.classList.remove("leave");
         headerBtn.classList.remove("leave");
-        headerHumb.forEach(elem => {
+        headerHumb.forEach((elem, idx) => {
             elem.classList.remove("leave")
         })
         isLeave = false;
+        ForTopBtn.classList.add("nottop")
     };
 }
 
@@ -51,6 +55,7 @@ const changeHumb = () => {
             headerBtn.classList.remove("leave");
             headerHumb.forEach(elem => {
                 elem.classList.remove("leave")
+                elem.classList.remove("clicked")
             })
         }
         changeHeader()
@@ -62,6 +67,7 @@ const changeHumb = () => {
             headerBtn.classList.add("leave");
             headerHumb.forEach(elem => {
                 elem.classList.add("leave")
+                elem.classList.add("clicked")
             })
         }
     }
@@ -105,7 +111,7 @@ const formCheck = () => {
 }
 
 const formSend = () => {
-    console.log("OK");
+    //console.log("OK");
     formButton.textContent = "送信完了！"
     formButton.classList.add("send")
     setTimeout(() => {
@@ -191,7 +197,7 @@ humb.addEventListener("click", () => {
 
 formButton.addEventListener("click", () => {
     temp = formCheck()
-    console.log(temp)
+    //console.log(temp)
     let error = [];
     let count = 0
     temp.forEach((element, idx) => {
@@ -206,7 +212,7 @@ formButton.addEventListener("click", () => {
         formSend()
     }
 
-    console.log(error);
+    //console.log(error);
 })
 
 ShowModalBtn.addEventListener("click", () => {

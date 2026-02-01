@@ -18,6 +18,7 @@ body {
     height: 100vh;
     overflow-x: hidden;
     font-family: Inter, sans-serif;
+    position: relative;
 }
 
 header {
@@ -125,6 +126,7 @@ header.leave a {
     width: 100%;
     height: 100vh;
     overflow: auto;
+    position: relative;
 }
 
 .highlight {
@@ -239,6 +241,27 @@ dialog button {
     background: #00000000;
     padding: 10px;
     border-radius: 10px;
+}
+
+.forTop {
+    width: 150px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 100px;
+    border: 1px solid #000;
+
+    position: fixed;
+    bottom: 10px;
+    left: calc(100% - 160px);
+    padding: 10px;
+    cursor: pointer;
+}
+
+.forTop.nottop {
+    display: none;
 }
 
 .aboutus {
@@ -734,6 +757,7 @@ footer {
         justify-content: center;
         align-items: center;
         gap: 5px;
+        position: relative;
     }
 
     .humb div {
@@ -741,6 +765,28 @@ footer {
         height: 5px;
         background-color: #fff;
         transition: all 0.5s;
+        transform: rotate(0);
+    }
+
+    .humb div.clicked:nth-child(1) {
+        transform: rotate(135deg);
+        position: absolute;
+        top: auto;
+        left: auto;
+    }
+
+    .humb div.clicked:nth-child(2) {
+        transform: rotate(135deg);
+        position: absolute;
+        top: auto;
+        left: auto;
+    }
+
+    .humb div.clicked:nth-child(3) {
+        transform: rotate(-135deg);
+        position: absolute;
+        top: auto;
+        left: auto;
     }
 
     .humb div.leave {
